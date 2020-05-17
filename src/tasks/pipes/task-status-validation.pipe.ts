@@ -9,12 +9,11 @@ export class TaskStatusValidationPipe implements PipeTransform {
   ];
 
   transform(value: any) {
-    const status = value.toUpperCase();
-
-    if (!this.isValidStatus(status))
+    // value = value.toUpperCase();
+    if (!this.isValidStatus(value))
       throw new BadRequestException(`${value} is not a valid status.`);
 
-    return status;
+    return value;
   }
 
   private isValidStatus(status: any): boolean {
