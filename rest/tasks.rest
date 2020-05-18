@@ -1,0 +1,32 @@
+@base_url = http://localhost:3000
+
+###
+# Get all tasks
+GET {{base_url}}/tasks
+
+###
+# Get filtered tasks
+GET {{base_url}}/tasks?status=open
+
+###
+# Create a task
+POST {{base_url}}/tasks
+Content-Type: application/json
+
+{
+    "title": "Last Task Title",
+    "description": "This is the last task description"
+}
+
+###
+# Update task status
+PATCH {{base_url}}/tasks/1ab9fff0-9942-11ea-9987-e723072af9aa/status
+Content-Type: application/json
+
+{
+    "status": "done"
+}
+
+###
+# Delete a task
+DELETE {{base_url}}/tasks/495734b0-9940-11ea-a497-45dc04baca80
