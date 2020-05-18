@@ -16,7 +16,7 @@ export class TasksService {
     const { search, status } = filterDto;
     let tasks = this.tasks;
 
-    if (status) tasks = tasks.filter(task => task.status === status);
+    if (status) tasks = tasks.filter(task => task.status === status.toUpperCase());
 
     if (search)
       tasks = tasks.filter(
